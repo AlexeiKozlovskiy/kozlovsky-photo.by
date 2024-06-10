@@ -31,7 +31,7 @@ jobs:
         run: npm run prettier
   Build:
     runs-on: ubuntu-latest
-    needs: [testing, linting, prettier]
+    needs: [linting, prettier]
     steps:
       - name: Get reposetory code
         uses: actions/checkout@v4
