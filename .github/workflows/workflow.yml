@@ -1,4 +1,4 @@
-name: online store next workflow
+name: own-photo-site workflow
 on: push
 jobs:
   Linting:
