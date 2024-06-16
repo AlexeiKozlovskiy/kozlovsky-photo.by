@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/header/header';
 
 const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
