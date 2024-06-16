@@ -3,21 +3,46 @@
 import { ROUTE } from '@/types/types';
 import { SxProps, Tab, Tabs, Theme, useMediaQuery } from '@mui/material';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 export default function Navigation() {
   const pathname = usePathname();
   const mediaMatches480 = useMediaQuery('(max-width:480px)');
   const mediaMatches768 = useMediaQuery('(max-width:768px)');
   const mediaMatches1024 = useMediaQuery('(max-width:1024px)');
+  const [open, setOpen] = useState(false);
 
   const color = '#fff';
   const router = useRouter();
 
-  useEffect(() => {
-    const currentTab = getCurrentTab();
-    setValue(currentTab);
-  }, [pathname]);
+  // useEffect(() => {
+  //   const currentTab = getCurrentTab();
+  //   setValue(currentTab);
+  // }, [pathname]);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  // useEffect(() => {
+  //   const handleHover = (e: React.MouseEvent | MouseEvent) => {
+  //     e.stopPropagation();
+  //     const { dataset } = e.target as HTMLElement;
+
+  //     if (dataset.id === 'portfolio') {
+  //       setOpen(true);
+  //     } else {
+  //       setOpen(false);
+  //     }
+  //   };
+
+  //   document.addEventListener('mouseover', handleHover);
+  //   return () => {
+  //     document.removeEventListener('mouseover', handleHover);
+  //   };
+  // }, []);
 
   function getCurrentTab() {
     const extractPath = `/${pathname.split('/').filter(Boolean)[0]}`;
@@ -63,29 +88,49 @@ export default function Navigation() {
     if (mediaMatches480) {
       return {
         '&.Mui-selected': { color },
-        '&.MuiButtonBase-root': { fontSize: '0.5rem', minWidth: 'auto', color, margin: '0 0px', padding: '0 5px' },
+        '&.MuiButtonBase-root': {
+          fontSize: '0.5rem',
+          minWidth: 'auto',
+          color,
+          margin: '0 0',
+          padding: '0 5px',
+          minHeight: '50px',
+        },
+        '& .MuiSvgIcon-root': { margin: '0' },
       };
     } else if (mediaMatches768) {
       return {
         '&.Mui-selected': { color },
-        '&.MuiButtonBase-root': { fontSize: '0.5rem', minWidth: 'auto', color, margin: '0 0px' },
+        '&.MuiButtonBase-root': { fontSize: '0.5rem', color, margin: '0 0', padding: '0 0', minHeight: '50px' },
+        '& .MuiSvgIcon-root': { margin: '0' },
       };
     } else if (mediaMatches1024) {
       return {
         '&.Mui-selected': { color },
-        '&.MuiButtonBase-root': { fontSize: '0.8rem', color, margin: '0 10px' },
+        '&.MuiButtonBase-root': { fontSize: '0.8rem', color, margin: '0 10px', padding: '0 0', minHeight: '50px' },
+        '& .MuiSvgIcon-root': { margin: '0' },
       };
     } else {
       return {
         '&.Mui-selected': { color },
-        '&.MuiButtonBase-root': { fontSize: '0.8rem', color, margin: '0 30px' },
+        '&.MuiButtonBase-root': {
+          fontSize: '0.8rem',
+          color,
+          padding: '0 0',
+          margin: '0 40px',
+          minHeight: '50px',
+        },
+        '& .MuiSvgIcon-root': { margin: '0' },
       };
     }
   }
 
   function checkStylesPanel(): SxProps<Theme> {
     if (mediaMatches768) {
-      return { '& .MuiTabs-indicator': { background: color }, '& .MuiTabs-scrollButtons': { display: 'flex' } };
+      return {
+        '& .MuiTabs-indicator': { background: color },
+        '& .MuiTabs-scrollButtons': { display: 'flex' },
+      };
     } else {
       return { '& .MuiTabs-indicator': { background: color } };
     }
@@ -93,11 +138,18 @@ export default function Navigation() {
 
   const stylesTab = checkStylesTab();
   const stylesPanel = checkStylesPanel();
+
   return (
-    <nav className="p-3 overflow-x-auto">
+    <nav className="overflow-x-auto h-[50px]">
       <Tabs value={value} onChange={handleChange} sx={stylesPanel} variant="scrollable">
         <Tab sx={stylesTab} label="Главная" />
-        <Tab sx={stylesTab} label="Портфолио" />
+        <Tab
+          icon={open ? <ExpandLess /> : <ExpandMore />}
+          iconPosition="end"
+          sx={stylesTab}
+          label="Портфолио"
+          onClick={handleClick}
+        />
         <Tab sx={stylesTab} label="О себе" />
         <Tab sx={stylesTab} label="Контакты" />
       </Tabs>
