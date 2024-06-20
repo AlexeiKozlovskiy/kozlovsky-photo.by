@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import SliderFirst from '@/components/slider/sliderFirst';
 import SliderSecond from '@/components/slider/sliderSecond';
 import { roboto } from '@/styles/nextFonts';
@@ -47,12 +46,19 @@ export default function Main() {
   return (
     <main className={roboto.className + ' flex flex-col items-center justify-between'}>
       <SliderFirst data={dataSliderFirst} />
-      <section className="max-w-6xl h-[500px] text-start pt-32">
-        <div className="max-w-6xl flex flex-row items-center space-between gap-10">
-          <Image src="/assets/avatar.png" alt="Алексей Козловский" width={250} height={250}></Image>
-          <div>
-            <h2 className="text-3xl font-bold">Алексей Козловский — свадебный и репортажный фотограф.</h2>
-            <p className="pt-10">
+      <section className="max-w-6xl h-max text-start">
+        <div className="flex flex-row items-center space-between gap-10 p-[80px] max-md:flex-col max-md:p-[40px] max-sm:p-[30px] max-md:text-center">
+          <div
+            className="shrink-0 h-[240px] w-[240px] max-md:h-[120px] max-md:w-[120px]"
+            style={{
+              background: `url("/assets/avatar.png") center center / cover no-repeat`,
+            }}
+          ></div>
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-bold max-lg:text-2xl max-md:text-xl">
+              Алексей Козловский — свадебный и репортажный фотограф.
+            </h2>
+            <p className="pt-12 max-lg:text-sm max-md:text-xs max-md:pt-6">
               Добро пожаловать на мой сайт, посвященный профессиональной фотографии! Меня зовут Алексей, и я являюсь создателем
               этого виртуального пространства, где вы можете вы можете ознакомиться с моим портфолио, узнать об услугах которые я
               я предоставляю, и многое другое.
@@ -61,15 +67,15 @@ export default function Main() {
         </div>
       </section>
       <SliderSecond data={dataSliderSecond} />
-      <section className="pt-28">
-        <p className="max-w-xl text-2xl font-bold text-center">
+      <section className="p-28 max-md:p-14 max-sm:p-10">
+        <p className="max-w-xl text-2xl font-bold text-center max-sm:text-sm">
           Для меня фотография — любимое дело, ставшее для меня профессией и смыслом жизни
         </p>
       </section>
-      <section className="w-full h-[600px] relative mt-32">
+      <section className="w-full h-[600px] relative max-xl:h-[400px]">
         <div className="z-10 bottom-10 absolute w-full flex flex-col items-center justify-center">
-          <h3 className="text-3xl font-bold">Записаться на съемку</h3>
-          <p className="max-w-xl text-center pt-5 pb-5 text-sm">
+          <h3 className="text-3xl font-bold max-sm:text-xl">Записаться на съемку</h3>
+          <p className="max-w-xl text-center p-5 text-sm max-sm:text-xs">
             Благодаря опыту и творческому подходу, я готов запечатлеть для вас самые важные моменты, создавая уникальные и
             неповторимые воспоминания.
           </p>
@@ -85,17 +91,17 @@ export default function Main() {
           }}
         ></div>
       </section>
-      <footer className="w-full h-full relative mt-10">
+      <footer className="w-full h-full relative mt-5 p-5">
         <div className="z-10 flex flex-row items-center justify-center gap-5 pb-5">
           {instagramLinck}
           {telegramLinck}
           {telefonLinck}
         </div>
         <h4 className="text-sm font-bold text-center">Репортажный фотограф Алексей Козловский.</h4>
-        <p className="text-xs font-bold text-center pt-2">
+        <p className="text-xs font-bold text-center pt-2 max-sm:text-[10px]">
           Создание ярких воспоминаний о самых важных событиях в Вашей жизни. Минск, Беларусь.
         </p>
-        <p className="text-xs text-center p-5 opacity-70">© 2024 Алексей Козловский</p>
+        <p className="text-xs text-center p-5 opacity-70 max-sm:text-[8px]">© 2024 Алексей Козловский</p>
       </footer>
     </main>
   );

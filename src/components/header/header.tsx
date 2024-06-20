@@ -1,18 +1,17 @@
 import { ptSans } from '@/styles/nextFonts';
 import Navigation from './navigation';
 import LogoOwner from '@/components/logoOwner/logoOwner';
-import '@/components/header/header.scss';
+import dynamic from 'next/dynamic';
+
+const HeaderParentStyle = dynamic(() => import('./headerParentStyle'));
 
 export default function Header() {
   return (
-    <header
-      className={
-        ptSans.className +
-        ' h-[50px] flex justify-between items-center pl-20 pr-20 cursor-pointer max-md:pl-10 max-md:pr-10 max-sm:pl-5 max-sm:pr-5 header'
-      }
-    >
-      <LogoOwner />
-      <Navigation />
+    <header className={ptSans.className + ' fixed top-0 left-0 z-10 w-full h-[50px]'}>
+      <HeaderParentStyle>
+        <LogoOwner />
+        <Navigation />
+      </HeaderParentStyle>
     </header>
   );
 }

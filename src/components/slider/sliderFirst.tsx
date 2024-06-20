@@ -19,7 +19,7 @@ interface SliderProps {
 
 export default function SliderFirst({ data }: SliderProps) {
   return (
-    <section className="w-full h-screen h-full">
+    <section className="w-full h-screen h-full max-lg:h-[600px] max-sm:h-[450px]">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         pagination={{ type: 'bullets', clickable: true }}

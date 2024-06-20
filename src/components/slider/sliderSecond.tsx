@@ -20,7 +20,7 @@ interface SliderProps {
 
 export default function SliderSecond({ data }: SliderProps) {
   return (
-    <section className="w-full h-[550px] opacity-90">
+    <section className="w-full h-[550px] opacity-90 max-xl:h-[450px] max-lg:h-[300px] max-md:h-[250px] max-[600px]:h-[140px]">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         grabCursor={true}
@@ -41,9 +41,9 @@ export default function SliderSecond({ data }: SliderProps) {
               }}
             ></div>
             <div className="relative z-10 h-full flex items-end justify-center">
-              <div className="text-center mb-10">
-                <p className="text-1xl sm:text-2xl lg:text-3xl text-white">{title}</p>
-                <Link href={ROUTE.PORTFOLIO + `${route}`} className="hover:underline pt-1 text-sm">
+              <div className="text-center mb-10 max-sm:mb-2">
+                <p className="text-2xl text-white max-lg:text-sm max-sm:text-[8px]">{title}</p>
+                <Link href={ROUTE.PORTFOLIO + `${route}`} className="hover:underline pt-1 text-sm max-sm:text-[8px]">
                   Перейти →
                 </Link>
               </div>
