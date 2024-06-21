@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "ARE AWESOME",
+    "tagline": "PHOTOGRAPHER FOR YOUR MOMENTS",
+    "image": "/assets/sliderFirst/1.webp"
+  },
+  {
+    "id": 2,
+    "title": "IF YOU LIKE IT",
+    "tagline": "LET'S TAKE A SHOOT",
+    "image": "/assets/sliderFirst/2.webp"
+  },
+  {
+    "id": 3,
+    "title": "EMBRACE THE MOMENTS",
+    "tagline": "PHOTOGRAPHER FOR YOUR LOVE",
+    "image": "/assets/sliderFirst/3.webp"
+  },
+
+  {
+    "id": 4,
+    "title": "FRAME YOUR LIFE",
+    "tagline": "YOUR STORY, OUR VISION",
+    "image": "/assets/sliderFirst/4.webp"
+  }
+]

@@ -5,6 +5,9 @@ export enum ROUTE {
   PORTFOLIO_PORTRAIT = '/portfolio/portrait',
   PORTFOLIO_LOVE_STORY = '/portfolio/love-story',
   PORTFOLIO_CORPORATE = '/portfolio/corporate',
+  PORTFOLIO_STUDIO = '/portfolio/studio',
+  PORTFOLIO_STREET = '/portfolio/street-portrait',
+  PORTFOLIO_BANQUET = '/portfolio/banquet',
   ABOUT = '/about',
   CONTACTS = '/contacts',
 }

@@ -6,43 +6,30 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import SelectPopoverPortfolio from '@/components/porfolioSelect/porfolioSelect';
 
 export default function Navigation() {
   const pathname = usePathname();
   const mediaMatches480 = useMediaQuery('(max-width:480px)');
   const mediaMatches768 = useMediaQuery('(max-width:768px)');
   const mediaMatches1024 = useMediaQuery('(max-width:1024px)');
-  const [open, setOpen] = useState(false);
-
+  const [openExpand, setOpenExpand] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const openPopover = Boolean(anchorEl);
+  const id = openPopover ? 'simple-popover' : undefined;
   const color = '#fff';
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const currentTab = getCurrentTab();
-  //   setValue(currentTab);
-  // }, [pathname]);
-
-  const handleClick = () => {
-    setOpen(!open);
+  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    setAnchorEl(event.currentTarget as HTMLButtonElement);
+    setOpenExpand(!openExpand);
   };
 
-  // useEffect(() => {
-  //   const handleHover = (e: React.MouseEvent | MouseEvent) => {
-  //     e.stopPropagation();
-  //     const { dataset } = e.target as HTMLElement;
-
-  //     if (dataset.id === 'portfolio') {
-  //       setOpen(true);
-  //     } else {
-  //       setOpen(false);
-  //     }
-  //   };
-
-  //   document.addEventListener('mouseover', handleHover);
-  //   return () => {
-  //     document.removeEventListener('mouseover', handleHover);
-  //   };
-  // }, []);
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+    setOpenExpand(!openExpand);
+  };
 
   function getCurrentTab() {
     const extractPath = `/${pathname.split('/').filter(Boolean)[0]}`;
@@ -142,17 +129,29 @@ export default function Navigation() {
   return (
     <nav className="overflow-x-auto h-[50px]">
       <Tabs value={value} onChange={handleChange} sx={stylesPanel} variant="scrollable">
-        <Tab sx={stylesTab} label="Главная" />
+        <Tab sx={stylesTab} label="Main" className="hover:text-gray-300 transition" />
         <Tab
-          icon={open ? <ExpandLess /> : <ExpandMore />}
-          iconPosition="end"
+          icon={
+            openExpand ? (
+              <div onClick={handlePopoverOpen}>
+                <ExpandLess />
+              </div>
+            ) : (
+              <div onClick={handlePopoverOpen}>
+                <ExpandMore className="hover:bg-gray-900 transition" />
+              </div>
+            )
+          }
+          iconPosition="start"
           sx={stylesTab}
-          label="Портфолио"
-          onClick={handleClick}
-        />
-        <Tab sx={stylesTab} label="О себе" />
-        <Tab sx={stylesTab} label="Контакты" />
+          label="Portfolio"
+          className="hover:text-gray-300 transition"
+          // onClick={handleClick}
+        ></Tab>
+        <Tab sx={stylesTab} label="About me" className="hover:text-gray-300 transition" />
+        <Tab sx={stylesTab} label="Contacts" className="hover:text-gray-300 transition" />
       </Tabs>
+      <SelectPopoverPortfolio id={id} openPopover={openPopover} anchorEl={anchorEl} handlePopoverClose={handlePopoverClose} />
     </nav>
   );
 }

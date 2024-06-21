@@ -29,3 +29,8 @@ export const titillium = Titillium_Web({
   weight: '200',
   subsets: ['latin'],
 });
+
+export const titillium_bold = Titillium_Web({
+  weight: '300',
+  subsets: ['latin'],
+});
