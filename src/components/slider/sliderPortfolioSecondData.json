@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "title": "LOVE STORY",
+    "image": [
+      "/assets/sliderSecond/loveStory_1.webp",
+      "/assets/sliderSecond/loveStory_2.webp",
+      "/assets/sliderSecond/loveStory_3.webp",
+      "/assets/sliderSecond/loveStory_4.webp"
+    ],
+    "route": "/love-story"
+  },
+  {
+    "id": 2,
+    "title": "WEDDING",
+    "image": [
+      "/assets/sliderSecond/wedding_1.webp",
+      "/assets/sliderSecond/wedding_2.webp",
+      "/assets/sliderSecond/wedding_3.webp",
+      "/assets/sliderSecond/wedding_4.webp",
+      "/assets/sliderSecond/wedding_5.webp"
+    ],
+    "route": "/wedding"
+  },
+  {
+    "id": 3,
+    "title": "STUDIO",
+    "image": [
+      "/assets/sliderSecond/studio_1.webp",
+      "/assets/sliderSecond/studio_2.webp",
+      "/assets/sliderSecond/studio_3.webp",
+      "/assets/sliderSecond/studio_4.webp",
+      "/assets/sliderSecond/studio_5.webp"
+    ],
+    "route": "/studio"
+  },
+  {
+    "id": 4,
+    "title": "STREET PORTRET",
+    "image": [
+      "/assets/sliderSecond/street-portret_1.webp",
+      "/assets/sliderSecond/street-portret_2.webp",
+      "/assets/sliderSecond/street-portret_3.webp",
+      "/assets/sliderSecond/street-portret_4.webp",
+      "/assets/sliderSecond/street-portret_5.webp"
+    ],
+    "route": "/street-portrait"
+  },
+  {
+    "id": 5,
+    "title": "BANQUETS AND CORPORATES",
+    "image": [
+      "/assets/sliderSecond/corp_1.webp",
+      "/assets/sliderSecond/corp_2.webp",
+      "/assets/sliderSecond/corp_3.webp",
+      "/assets/sliderSecond/corp_4.webp",
+      "/assets/sliderSecond/corp_5.webp"
+    ],
+    "route": "/banquet&corporate"
+  }
+]
