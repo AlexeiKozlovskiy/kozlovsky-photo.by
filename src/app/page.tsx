@@ -35,7 +35,7 @@ export default function Main() {
           </div>
         </div>
       </section>
-      <SliderPortfolioSecond data={sliderPortfolioSecondData} />
+      <SliderPortfolioSecond sliderProps={sliderPortfolioSecondData} />
       <section className="p-28 max-md:p-14 max-sm:p-10">
         <p className="max-w-xl text-2xl font-bold text-center max-sm:text-sm">
           Для меня фотография — любимое дело, ставшее для меня профессией и смыслом жизни
