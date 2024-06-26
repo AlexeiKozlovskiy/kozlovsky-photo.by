@@ -3,7 +3,7 @@
 import { ROUTE } from '@/types/types';
 import { SxProps, Tab, Tabs, Theme, useMediaQuery } from '@mui/material';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import SelectPopoverPortfolio from '@/components/porfolioSelect/porfolioSelect';
@@ -13,6 +13,7 @@ export default function Navigation() {
   const mediaMatches480 = useMediaQuery('(max-width:480px)');
   const mediaMatches768 = useMediaQuery('(max-width:768px)');
   const mediaMatches1024 = useMediaQuery('(max-width:1024px)');
+  const [currentTabs, setCurrentTabs] = useState(0);
   const [openExpand, setOpenExpand] = useState(false);
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const openPopover = Boolean(anchorEl);
@@ -20,19 +21,23 @@ export default function Navigation() {
   const color = '#fff';
   const router = useRouter();
 
-  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
+  function handlePopoverOpen(event: React.MouseEvent<HTMLElement>) {
     event.stopPropagation();
     setAnchorEl(event.currentTarget as HTMLButtonElement);
     setOpenExpand(!openExpand);
-  };
+  }
 
-  const handlePopoverClose = () => {
+  function handlePopoverClose() {
     setAnchorEl(null);
     setOpenExpand(!openExpand);
-  };
+  }
+
+  useEffect(() => {
+    setCurrentTabs(getCurrentTab());
+  }, [pathname]);
 
   function getCurrentTab() {
-    const extractPath = `/${pathname.split('/').filter(Boolean)[0]}`;
+    const extractPath = `/${pathname.split('/').filter(Boolean)}`;
 
     switch (extractPath) {
       case ROUTE.MAIN:
@@ -48,11 +53,8 @@ export default function Navigation() {
     }
   }
 
-  const currentTab = getCurrentTab();
-  const [value, setValue] = useState(currentTab);
-
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+    setCurrentTabs(newValue);
     switch (newValue) {
       case 0:
         router.push(ROUTE.MAIN);
@@ -128,7 +130,7 @@ export default function Navigation() {
 
   return (
     <nav className="overflow-x-auto h-[50px]">
-      <Tabs value={value} onChange={handleChange} sx={stylesPanel} variant="scrollable">
+      <Tabs value={currentTabs} onChange={handleChange} sx={stylesPanel} variant="scrollable">
         <Tab sx={stylesTab} label="Main" className="hover:text-gray-300 transition" />
         <Tab
           icon={

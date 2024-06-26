@@ -1,4 +1,5 @@
 {
     "prettier.insertPragma": true,
-    "prettier.configPath": ""
+    "prettier.configPath": "",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
