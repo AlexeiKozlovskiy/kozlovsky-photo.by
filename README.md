@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My own photo site.
+
+I have a hobby, photography, and I decided to make a photo website with my photo works. This is project my own photo site.
+
+## Common stack
+
+- TS
+- React
+- Next
+- Material UI
+- Tailwind
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Clone this repository. `https://github.com/AlexeiKozlovskiy/online-store-next.git`
+- Checkout to the development branch `git checkout develop`
+- Install dependencies using `npm install`.
+- Run `npm run dev` or `npm run start`.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# <img src="https://wakatime.com/badge/user/018d3b7f-99dd-4b60-ab6b-4d807848fdb5/project/7dd1acb1-c30f-4653-be29-dda3d3e87605.svg" alt="wakatime image" width="162" height="18">
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deploy on [Vercel](https://own-photo-site.vercel.app/)
