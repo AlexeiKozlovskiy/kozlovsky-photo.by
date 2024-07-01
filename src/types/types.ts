@@ -11,3 +11,13 @@ export enum ROUTE {
   ABOUT = '/about',
   CONTACTS = '/contacts',
 }
+
+export interface Slide {
+  id: number;
+  title: string;
+  image: string | string[];
+  route: string;
+}
+export interface SliderProps {
+  sliderProps: Slide[];
+}

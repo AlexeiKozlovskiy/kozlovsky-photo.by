@@ -6,38 +6,33 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Link from 'next/link';
-import { ROUTE } from '@/types/types';
+import { ROUTE, SliderProps } from '@/types/types';
+import { useMediaQuery } from '@mui/material';
+import { useAutoChangeImage } from './useAutoChangeImage';
 
-interface Slide {
-  id: number;
-  title: string;
-  image: string;
-  route: string;
-}
-interface SliderProps {
-  data: Slide[];
-}
+export default function SliderPortfolioSecond({ sliderProps }: SliderProps) {
+  const mediaMatches = useMediaQuery('(max-width:600px)');
+  const imageIndex = useAutoChangeImage({ sliderProps });
 
-export default function SliderSecond({ data }: SliderProps) {
   return (
-    <section className="w-full h-[550px] opacity-90 max-xl:h-[450px] max-lg:h-[300px] max-md:h-[250px] max-[600px]:h-[140px]">
+    <section className="w-full h-[550px] opacity-90 max-xl:h-[450px] max-lg:h-[300px] max-md:h-[250px] max-[500px]:h-[200px] max-[400px]:h-[160px]">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         grabCursor={true}
-        slidesPerView={4}
-        pagination={{ type: 'bullets', clickable: true }}
+        slidesPerView={mediaMatches ? 3 : 4}
+        // pagination={{ type: 'bullets', clickable: true }}
         autoplay={{
-          delay: 7000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         loop={true}
       >
-        {data.map(({ id, image, title, route }) => (
+        {sliderProps.map(({ id, image, title, route }, ind) => (
           <SwiperSlide key={id} className="">
             <div
-              className="h-full w-full absolute left-0 top-0"
+              className="h-full w-full absolute left-0 top-0 transition-background duration-700"
               style={{
-                background: `url(${image}) center center / cover no-repeat`,
+                background: `url(${image[imageIndex[ind]]}) center center / cover no-repeat`,
               }}
             ></div>
             <div className="relative z-10 h-full flex items-end justify-center">

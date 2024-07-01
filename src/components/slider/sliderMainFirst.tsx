@@ -17,7 +17,7 @@ interface SliderProps {
   data: Slide[];
 }
 
-export default function SliderFirst({ data }: SliderProps) {
+export default function SliderMainFirst({ data }: SliderProps) {
   return (
     <section className="w-full h-screen h-full max-lg:h-[600px] max-sm:h-[450px]">
       <Swiper
