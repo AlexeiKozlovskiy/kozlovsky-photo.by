@@ -16,7 +16,7 @@ export default function SelectPopoverPortfolio({ id, anchorEl, openPopover, hand
       id={id}
       sx={{
         '& .MuiPopover-paper': {
-          background: 'rgb(0, 0, 0, 0.5)',
+          background: 'rgb(0, 0, 0, 0.8)',
           boxShadow: 'none',
           color: 'white',
           margin: '20px 0 0 0',
@@ -48,7 +48,7 @@ export default function SelectPopoverPortfolio({ id, anchorEl, openPopover, hand
           <Link href={ROUTE.PORTFOLIO_STREET}>STREET PORTRET</Link>
         </li>
         <li className="cursor-pointer hover:text-gray-400 transition max-md:text-xs">
-          <Link href={ROUTE.PORTFOLIO_BANQUET}>BANQUETS AND CORPORATE</Link>
+          <Link href={ROUTE.PORTFOLIO_BANQUET_CORPORATE}>BANQUETS AND CORPORATE</Link>
         </li>
       </Typography>
     </Popover>

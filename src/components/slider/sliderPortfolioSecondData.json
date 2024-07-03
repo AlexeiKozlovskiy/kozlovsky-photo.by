@@ -38,11 +38,11 @@
     "id": 4,
     "title": "STREET PORTRET",
     "image": [
-      "/assets/sliderSecond/street-portret_1.webp",
-      "/assets/sliderSecond/street-portret_2.webp",
-      "/assets/sliderSecond/street-portret_3.webp",
-      "/assets/sliderSecond/street-portret_4.webp",
-      "/assets/sliderSecond/street-portret_5.webp"
+      "/assets/sliderSecond/streetPortret_1.webp",
+      "/assets/sliderSecond/streetPortret_2.webp",
+      "/assets/sliderSecond/streetPortret_3.webp",
+      "/assets/sliderSecond/streetPortret_4.webp",
+      "/assets/sliderSecond/streetPortret_5.webp"
     ],
     "route": "/street-portrait"
   },
@@ -56,6 +56,6 @@
       "/assets/sliderSecond/corp_4.webp",
       "/assets/sliderSecond/corp_5.webp"
     ],
-    "route": "/banquet&corporate"
+    "route": "/banquets&corporates"
   }
 ]

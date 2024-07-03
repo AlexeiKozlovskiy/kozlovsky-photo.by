@@ -1,6 +1,7 @@
 import '@/styles/customBtnMenu.scss';
 import { roboto } from '@/styles/nextFonts';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import SliderMainFirst from '@/components/slider/sliderMainFirst';
 import SliderPortfolioSecond from '@/components/slider/sliderPortfolioSecond';
 import sliderMainFirstData from '@/components/slider/sliderMainFirstData.json';
@@ -52,13 +53,12 @@ export default function Main() {
             <span data-text="КОНТАКТЫ">КОНТАКТЫ</span>
           </button>
         </div>
-        <div
-          className="h-full w-full absolute left-0 top-0"
-          style={{
-            background: `url("assets/100а.webp") center top / cover no-repeat`,
-            opacity: 0.7,
-          }}
-        ></div>
+        <Image
+          className="opacity-85 object-cover object-top"
+          src="/assets/zapis.webp"
+          alt="Записаться на съемку"
+          fill={true}
+        ></Image>
       </section>
     </main>
   );
