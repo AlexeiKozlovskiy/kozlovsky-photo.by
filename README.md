@@ -1,6 +1,6 @@
 # My own photo site.
 
-I have a hobby, photography, and I decided to make a photo website with my photo works. This is project my own photo site.
+I have a real hobby, photography, and I decided to make a photo website with my reral photo works. This is project my own photo site.
 
 ## Common stack
 
