@@ -34,10 +34,11 @@ export default function Navigation() {
 
   useEffect(() => {
     setCurrentTabs(getCurrentTab());
+    setAnchorEl(null);
   }, [pathname]);
 
   function getCurrentTab() {
-    const extractPath = `/${pathname.split('/').filter(Boolean)}`;
+    const extractPath = `/${pathname.split('/').filter(Boolean)[0]}`;
 
     switch (extractPath) {
       case ROUTE.MAIN:
@@ -140,7 +141,7 @@ export default function Navigation() {
               </div>
             ) : (
               <div onClick={handlePopoverOpen}>
-                <ExpandMore className="hover:bg-gray-900 transition" />
+                <ExpandMore className="hover:bg-[rgb(0,0,0,0.3)] transition" />
               </div>
             )
           }
