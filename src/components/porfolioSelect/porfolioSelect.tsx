@@ -16,7 +16,7 @@ export default function SelectPopoverPortfolio({ id, anchorEl, openPopover, hand
       id={id}
       sx={{
         '& .MuiPopover-paper': {
-          background: 'rgb(0, 0, 0, 0.8)',
+          background: 'rgb(0, 0, 0, 0.85)',
           boxShadow: 'none',
           color: 'white',
           margin: '20px 0 0 0',

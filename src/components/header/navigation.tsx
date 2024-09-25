@@ -149,7 +149,7 @@ export default function Navigation() {
           sx={stylesTab}
           label="Portfolio"
           className="hover:text-gray-300 transition"
-          // onClick={handleClick}
+          onClick={handlePopoverOpen}
         ></Tab>
         <Tab sx={stylesTab} label="About me" className="hover:text-gray-300 transition" />
         <Tab sx={stylesTab} label="Contacts" className="hover:text-gray-300 transition" />
