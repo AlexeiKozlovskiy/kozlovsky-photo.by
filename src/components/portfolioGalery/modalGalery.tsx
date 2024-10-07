@@ -154,11 +154,13 @@ const Backdrop = forwardRef<HTMLDivElement, { open?: boolean }>((props, ref) => 
 Backdrop.displayName = 'Backdrop';
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  height: '95vh',
+  // position: 'absolute',
+  // top: '50%',
+  // left: '50%',
+  // transform: 'translate(-50%, -50%)',
+  // height: '60vh',
+  // with: '60vh',
+  width: '85%',
 };
 
 const ModalContent = styled('div')`
