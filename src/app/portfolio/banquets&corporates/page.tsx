@@ -24,11 +24,7 @@ const banquetsCorporatesImages = [
 
 export default async function BanquetsCorporates() {
   return (
-    <main
-      className={
-        titillium_bold.className + ' flex min-h-100vh flex-col items-center justify-between p-20 max-sm:p-3 max-sm:pt-20'
-      }
-    >
+    <main className={titillium_bold.className + ' flex flex-col items-center justify-between p-20 max-sm:p-3 max-sm:pt-20'}>
       <h3 className="text-2xl mb-[20px]">BANQUEST & CORPORATES</h3>
       <PortfolioGalery images={banquetsCorporatesImages} alt="Love story image" />
     </main>

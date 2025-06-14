@@ -7,6 +7,7 @@ import { unstable_useModal as useModal } from '@mui/base/unstable_useModal';
 import Fade from '@mui/material/Fade';
 import Image from 'next/image';
 import { forwardRef } from 'react';
+import { useMediaMatches } from '../hooks/mediaMatchesHook';
 
 interface UseModalProps {
   openModal: boolean;
@@ -17,20 +18,34 @@ interface UseModalProps {
 export function ModalGalery({ openModal, chosenImage, setOpenModal }: UseModalProps) {
   const handleClose = () => setOpenModal(false);
 
+  const { width, height } = useMediaMatches({
+    mediaPoints: [
+      { maxWidth: 500, width: 320, height: 550 },
+      { maxWidth: 1000, width: 450, height: 700 },
+    ],
+    baseWidth: 530,
+    baseHeight: 700,
+  });
+
   return (
     <div>
       <Modal open={openModal} onClose={handleClose} closeAfterTransition>
         <Fade in={openModal}>
           <ModalContent sx={style}>
+            <div
+              className="absolute top-[10px] right-[10px] text-xl  px-1 rounded-md hover:bg-gray-300 transition duration-300 opacity-75 cursor-pointer"
+              onClick={handleClose}
+            >
+              &#x2717;
+            </div>
             <Image
               src={chosenImage}
               alt={'image portfolio'}
-              width={248}
-              height={408}
+              width={width}
+              height={height}
               priority={false}
               loading="lazy"
               unoptimized
-              className="object-contain object-center w-auto h-auto"
             />
           </ModalContent>
         </Fade>
@@ -154,26 +169,21 @@ const Backdrop = forwardRef<HTMLDivElement, { open?: boolean }>((props, ref) => 
 Backdrop.displayName = 'Backdrop';
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  height: '95vh',
+  margin: 'auto auto',
 };
 
 const ModalContent = styled('div')`
   position: relative;
   display: flex;
-  overflow: hidden;
+  flex-direction: column;
   outline: 0;
 `;
+
 const CustomModalRoot = styled('div')`
   position: fixed;
   z-index: 1300;
   inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const CustomModalBackdrop = styled(Backdrop)`
