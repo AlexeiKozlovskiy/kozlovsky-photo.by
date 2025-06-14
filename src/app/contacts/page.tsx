@@ -12,7 +12,7 @@ export default async function Contacts() {
     <main className={roboto.className + ' flex flex-col items-center justify-between p-10'}>
       <section className="max-w-6xl h-max text-start">
         <h2 className="text-2xl font-bold max-lg:text-1xl max-md:text-xl text-center p-10">СВЯЖИТЕСЬ С МНОЙ</h2>
-        <div className="text-center flex flex-row items-center space-between gap-10 p-10 max-sm:p-2 max-sm:pt-5 max-md:text-center">
+        <div className="text-center flex flex-row items-center space-between gap-10 p-5 max-sm:p-2 max-sm:pt-5 max-md:text-center">
           <div
             className="shrink-0 h-[300px] w-[300px] max-md:h-[150px] max-md:w-[150px]"
             style={{

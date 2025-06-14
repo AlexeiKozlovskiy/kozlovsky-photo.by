@@ -6,6 +6,8 @@ import SliderMainFirst from '@/components/slider/sliderMainFirst';
 import SliderPortfolioSecond from '@/components/slider/sliderPortfolioSecond';
 import sliderMainFirstData from '@/components/slider/sliderMainFirstData.json';
 import sliderPortfolioSecondData from '@/components/slider/sliderPortfolioSecondData.json';
+import Link from 'next/link';
+import { ROUTE } from '@/types/types';
 
 export const metadata: Metadata = {
   title: 'Фоторграф в Минске Алексей Козловский',
@@ -49,9 +51,11 @@ export default function Main() {
             Благодаря опыту и творческому подходу, я готов запечатлеть для вас самые важные моменты, создавая уникальные и
             неповторимые воспоминания.
           </p>
-          <button className="customBtnMenu">
-            <span data-text="КОНТАКТЫ">КОНТАКТЫ</span>
-          </button>
+          <Link href={ROUTE.CONTACTS}>
+            <button className="customBtnMenu">
+              <span data-text="КОНТАКТЫ">КОНТАКТЫ</span>
+            </button>
+          </Link>
         </div>
         <Image
           className="opacity-85 object-cover object-top"

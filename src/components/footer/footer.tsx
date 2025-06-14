@@ -42,7 +42,7 @@ export default function Footer() {
       <p className="text-xs font-bold text-center pt-2 max-sm:text-[10px]">
         Создание ярких воспоминаний о самых важных событиях в Вашей жизни. Минск, Беларусь.
       </p>
-      <p className="text-xs text-center p-5 opacity-70 max-sm:text-[8px]">© 2024 Алексей Козловский</p>
+      <p className="text-xs text-center p-5 opacity-70 max-sm:text-[8px]">© 2025 Алексей Козловский</p>
     </footer>
   );
 }

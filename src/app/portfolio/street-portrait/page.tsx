@@ -38,6 +38,10 @@ const streetImages = [
   '/assets/pages/streetPortret/streetPortret_28.webp',
   '/assets/pages/streetPortret/streetPortret_29.webp',
   '/assets/pages/streetPortret/streetPortret_30.webp',
+  '/assets/pages/streetPortret/streetPortret_31.webp',
+  '/assets/pages/streetPortret/streetPortret_32.webp',
+  '/assets/pages/streetPortret/streetPortret_33.webp',
+  '/assets/pages/streetPortret/streetPortret_34.webp',
 ];
 
 export default async function StreetPortrait() {
