@@ -14,7 +14,6 @@ export default function Navigation() {
   const mediaMatches768 = useMediaQuery('(max-width:768px)');
   const mediaMatches1024 = useMediaQuery('(max-width:1024px)');
   const [currentTabs, setCurrentTabs] = useState(0);
-  const [openExpand, setOpenExpand] = useState(false);
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
   const openPopover = Boolean(anchorEl);
   const id = openPopover ? 'simple-popover' : undefined;
@@ -24,12 +23,10 @@ export default function Navigation() {
   function handlePopoverOpen(event: React.MouseEvent<HTMLElement>) {
     event.stopPropagation();
     setAnchorEl(event.currentTarget as HTMLButtonElement);
-    setOpenExpand(!openExpand);
   }
 
   function handlePopoverClose() {
     setAnchorEl(null);
-    setOpenExpand(!openExpand);
   }
 
   useEffect(() => {
@@ -135,13 +132,13 @@ export default function Navigation() {
         <Tab sx={stylesTab} label="Main" className="hover:text-gray-300 transition" />
         <Tab
           icon={
-            openExpand ? (
+            openPopover ? (
               <div onClick={handlePopoverOpen}>
                 <ExpandLess />
               </div>
             ) : (
               <div onClick={handlePopoverOpen}>
-                <ExpandMore className="hover:bg-[rgb(0,0,0,0.3)] transition" />
+                <ExpandMore className="hover:bg-[rgb(192,192,192,0.4)] transition" />
               </div>
             )
           }
@@ -149,7 +146,6 @@ export default function Navigation() {
           sx={stylesTab}
           label="Portfolio"
           className="hover:text-gray-300 transition"
-          onClick={handlePopoverOpen}
         ></Tab>
         <Tab sx={stylesTab} label="About me" className="hover:text-gray-300 transition" />
         <Tab sx={stylesTab} label="Contacts" className="hover:text-gray-300 transition" />
